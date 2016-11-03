@@ -1,0 +1,15 @@
+[Unit]
+Description=Simplified simple zebra service
+After=syslog.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/python2 /home/ajostler/Codes/AndrewWHA/WHA.py 800
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
